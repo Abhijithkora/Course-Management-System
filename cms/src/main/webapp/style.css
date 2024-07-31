@@ -1,0 +1,478 @@
+@charset "ISO-8859-1";
+
+* {
+	margin: 10px;
+	padding: 0px;
+	transition: all 0.3s ease;
+}
+
+h1 {
+	transform: translateX(-110%);
+	font: 15px Arial, sans-serif;
+	font-size: 200%;
+}
+
+.header {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 10px;
+	background-color: #00173d;
+	border-bottom: 2px solid black;
+	transition: background-color 0.3s ease;
+}
+
+.header:hover {
+	background-color: #002b6f;
+}
+
+.left {
+	border: 2px solid black;
+	padding: 30px;
+	width: 250px;
+	height: 720px;
+	background-color: #00173d;
+	border-radius: 25px;
+}
+
+.right {
+	border: 2px solid black;
+	width: 100%;
+	height:auto;
+}
+
+.container {
+	margin-top: 0;
+	background-color: #e8f1f2;
+	display: flex;
+}
+
+.profile-container {
+	display: flex;
+	align-items: center;
+	margin-top: 10px;
+}
+
+.clickuid {
+	color: white;
+	text-decoration: none;
+}
+
+.logout-btn {
+	border: 2px solid white;
+	padding: 10px;
+	border-radius: 13px;
+	background-color: #00173d;
+	text-decoration: none;
+	color: #e8f1f2;
+	height: 25px;
+	display: flex;
+	position: absolute;
+	margin-left: 84%;
+	font-size: larger;
+	font-family: sans-serif;
+	margin-top: 2%;
+	transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+	background-color: #002b6f;
+}
+
+.candidate-uid {
+	color: white;
+	cursor: pointer;
+	margin-left: 10px;
+	font-size: 30px;
+	transform: translateX(50px);
+}
+
+.logo img {
+	width: 30px;
+	margin-top: -20px;
+	margin-left: -10px;
+	border-radius: 90px;
+	position: relative;
+	transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+	transform: scale(1.1);
+}
+
+.logo svg {
+	width: 150px;
+	margin-top: -10px;
+	position: absolute;
+	size: 100px;
+}
+
+.user {
+	border: 2px solid white;
+	padding: 1px;
+	border-radius: 4px;
+	display: flex;
+	flex-direction: row;
+	width: 200px;
+	transform: translateX(-440%);
+	transition: transform 0.3s ease;
+}
+
+.user:hover {
+	transform: translateX(-430%);
+}
+
+.profile {
+	border-radius: 50%;
+	width: 20px;
+	height: 10px;
+}
+
+.profile img {
+	width: 50px;
+	height: 60px;
+	border-radius: 10px;
+	aspect-ratio: 3/2;
+	align-content: justify-content;
+	transition: transform 0.3s ease;
+}
+
+.profile img:hover {
+	transform: scale(1.1);
+}
+
+.menu {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-top: 20px;
+}
+
+.option {
+	border: 2px solid #e8f1f2;
+	background-color: #c2e8f8;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.option:hover {
+	background-color: #a0d4ec;
+}
+
+.hometext {
+	color: black;
+	margin-left: 10px;
+	font-size: medium;
+	font-weight: 100;
+}
+
+.icon {
+	display: flex;
+	align-items: center;
+}
+
+.candidate-uid {
+	border: 2px solid white;
+	padding: 1px;
+	border-radius: 14px;
+	display: flex;
+	flex-direction: row;
+	width: auto;
+	transform: translateX(180%);
+	transition: transform 0.3s ease;
+}
+
+.candidate-uid:hover {
+	transform: translateX(190%);
+}
+
+.row {
+	margin-right: -15px;
+	margin-left: -15px;
+}
+
+.figurerall {
+	display: inline-block;
+}
+
+.figureicon {
+	background-image: url("https://newerp.kluniversity.in/images/iconbg.jpg");
+	background-position: center;
+	color: #fff;
+	height: 100px;
+	width: 100px;
+	text-align: center;
+	font-size: 45px;
+	margin-left: auto;
+	margin-right: auto;
+	cursor: pointer;
+	border-radius: 50%;
+	transition: transform 0.3s ease;
+}
+
+.figureicon:hover {
+	transform: scale(1.1);
+}
+
+.text-center {
+	text-align: center;
+}
+
+.container-fluid {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.awards {
+	display: flex;
+    margin-top: -198px;
+    position: absolute;
+    margin-left: 461px;
+}
+
+.project {
+	display: flex;
+    margin-top: -202px;
+    position: absolute;
+    margin-left: 472px;
+}
+
+.conference {
+	display: flex;
+}
+
+.consultancy {
+	display: flex;
+}
+
+.option-anchor {
+	text-decoration: none;
+	display: flex;
+	height: 35px;
+	transition: color 0.3s ease;
+}
+
+.option-anchor:hover {
+	color: #0056b3;
+}
+
+select {
+	width: 100%;
+	padding: 10px;
+	border: 2px solid #00173d;
+	border-radius: 8px;
+	background-color: #c2e8f8;
+	font-family: 'Arial', sans-serif;
+	font-size: 16px;
+	color: black;
+	margin-bottom: 20px;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+select:hover {
+	background-color: #a0d4ec;
+	color: #00173d;
+}
+
+option {
+	padding: 10px;
+	background-color: #e8f1f2;
+	font-family: 'Arial', sans-serif;
+	font-size: 16px;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 20px;
+	transition: transform 0.3s ease;
+}
+
+table, th, td {
+	border: 2px solid #00173d;
+	text-align: center;
+
+}
+
+th, td {
+	padding: 10px;
+	font-family: 'Arial', sans-serif;
+	font-size: 16px;
+	background-color: #c2e8f8;
+	color: black;
+}
+
+th {
+	background-color: #00173d;
+	color: white;
+}
+
+tr:nth-child(even) {
+	background-color: #e8f1f2;
+}
+
+tr:hover {
+	background-color: #d1e7e9;
+	transform: scale(1.01);
+}
+
+.form-group-1 h1 {
+	text-decoration: none;
+	font-size: 20px;
+	margin-left: 219px;
+}
+
+.reg-btn {
+	background-color: #00173d;
+	padding: 20px;
+	font-size: 37px;
+	color: #e8f9f9;
+	border: white;
+	border-radius: 26px;
+	transition: background-color 0.3s ease;
+}
+
+.reg-btn:hover {
+	background-color: #002b6f;
+}
+
+.hamberger {
+	display: flex;
+	position: fixed;
+	margin-left: 138px;
+}
+
+.right-courses {
+	display: flex;
+	position: absolute;
+	top: 182px;
+	width: 50%;
+	
+}
+
+.warning {
+	display: flex;
+	position: absolute;
+	top: -75px;
+	justify-content: center;
+	align-items: center;
+	margin-left: 60px;
+}
+
+.aw-head {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 80px;
+    padding: 39px;
+    background-color: #f0f0f0;
+    position: absolute;
+    transition: transform 0.3s ease;
+    margin-left: 58%;
+    
+}
+
+.a-head:hover {
+	transform: translateY(-10px);
+}
+
+.a-head h2 {
+	margin: 0;
+}
+
+.a-head .c-btn {
+	padding: 10px 20px;
+	background-color: #007bff;
+	color: white;
+	text-decoration: none;
+	border-radius: 5px;
+	transition: background-color 0.3s ease;
+}
+
+.a-head .c-btn:hover {
+	background-color: #0056b3;
+}
+
+.right-assignment {
+	margin: 20px;
+	padding: 20px;
+	border: 2px solid black;
+	background-color: #ffffff;
+	width: 90%;
+	display: flex;
+	position: absolute;
+	width: 58%;
+	margin-left: 30%;
+	margin-top: 14%;
+	transition: transform 0.3s ease;
+}
+
+.right-assignment:hover {
+	transform: scale(1.01);
+}
+
+.right-assignment table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.right-assignment th, .right-assignment td {
+	padding: 10px;
+	text-align: left;
+	border: 1px solid black;
+}
+
+.upload-btn {
+	background-color: #28a745;
+	color: white;
+	border: none;
+	padding: 5px 10px;
+	border-radius: 3px;
+	transition: background-color 0.3s ease;
+}
+
+.upload-btn:hover {
+	background-color: #218838;
+}
+
+@media screen and (max-width: 480px) {
+	h1 {
+		font-size: 150%;
+	}
+
+	.figurerall {
+		margin-top: 5px;
+	}
+
+	.right-assignment {
+		padding: 10px;
+	}
+
+	.a-head {
+		padding: 10px;
+	}
+
+	.option {
+		font-size: 14px;
+		padding: 10px;
+	}
+
+	.logout-btn {
+		font-size: medium;
+	}
+
+	.user, .candidate-uid {
+		font-size: 14px;
+	}
+
+	table, th, td {
+		font-size: 10px;
+		padding: 5px;
+	}
+}

@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Course Management</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        .form-section {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2 class="mt-5">Course Management</h2>
+    <div class="form-group mt-4">
+        <label for="operationSelect">Select Operation:</label>
+        <select class="form-control" id="operationSelect" onchange="toggleForms()">
+            <option value="">--Select Operation--</option>
+            <option value="add">Add Course</option>
+            <option value="delete">Delete Course</option>
+            <option value="update">Update Course</option>
+            <option value="view">View Courses</option>
+        </select>
+    </div>
+
+    <!-- Add Course Form -->
+    <form id="addForm" class="form-section" action="course.jsp" method="post">
+        <input type="hidden" name="operation" value="add">
+        <div class="form-group">
+            <label for="courseIdAdd">Course ID:</label>
+            <input type="number" class="form-control" id="courseIdAdd" name="cid" required>
+        </div>
+        <div class="form-group">
+            <label for="courseCodeAdd">Course Code:</label>
+            <input type="text" class="form-control" id="courseCodeAdd" name="ccode" required>
+        </div>
+        <div class="form-group">
+            <label for="courseNameAdd">Course Name:</label>
+            <input type="text" class="form-control" id="courseNameAdd" name="cname" required>
+        </div>
+        <div class="form-group">
+            <label for="instructorIdAdd">Instructor ID:</label>
+            <input type="text" class="form-control" id="instructorIdAdd" name="ciid" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Course</button>
+    </form>
+
+    <!-- Delete Course Form -->
+    <form id="deleteForm" class="form-section" action="course.jsp" method="post">
+        <input type="hidden" name="operation" value="delete">
+        <div class="form-group">
+            <label for="courseIdDelete">Course ID:</label>
+            <input type="number" class="form-control" id="courseIdDelete" name="cid" required>
+        </div>
+        <button type="submit" class="btn btn-danger">Delete Course</button>
+    </form>
+
+    <!-- Update Course Form -->
+    <form id="updateForm" class="form-section" action="course.jsp" method="post">
+        <input type="hidden" name="operation" value="update">
+        <div class="form-group">
+            <label for="courseIdUpdate">Course ID:</label>
+            <input type="number" class="form-control" id="courseIdUpdate" name="cid" required>
+        </div>
+        <div class="form-group">
+            <label for="courseCodeUpdate">Course Code:</label>
+            <input type="text" class="form-control" id="courseCodeUpdate" name="ccode" required>
+        </div>
+        <div class="form-group">
+            <label for="courseNameUpdate">Course Name:</label>
+            <input type="text" class="form-control" id="courseNameUpdate" name="cname" required>
+        </div>
+        <div class="form-group">
+            <label for="instructorIdUpdate">Instructor ID:</label>
+            <input type="text" class="form-control" id="instructorIdUpdate" name="ciid" required>
+        </div>
+        <button type="submit" class="btn btn-warning">Update Course</button>
+    </form>
+
+    <!-- View Courses Section -->
+    <div id="viewForm" class="form-section">
+        <button class="btn btn-info mb-3" onclick="loadCourses()">Load Courses</button>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Course ID</th>
+                    <th>Course Code</th>
+                    <th>Course Name</th>
+                    <th>Instructor Name</th>
+                </tr>
+            </thead>
+            <tbody id="coursesTableBody"></tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    function toggleForms() {
+        document.querySelectorAll('.form-section').forEach(section => section.style.display = 'none');
+        var operation = document.getElementById('operationSelect').value;
+        if (operation) {
+            document.getElementById(operation + 'Form').style.display = 'block';
+        }
+    }
+
+    function loadCourses() {
+        fetch('course.jsp?operation=view')
+            .then(response => response.json())
+            .then(data => {
+                var tableBody = document.getElementById('coursesTableBody');
+                tableBody.innerHTML = '';
+                data.forEach(course => {
+                    var row = `<tr>
+                        <td>${course.course_id}</td>
+                        <td>${course.course_code}</td>
+                        <td>${course.course_name}</td>
+                        <td>${course.instructor_name}</td>
+                    </tr>`;
+                    tableBody.innerHTML += row;
+                });
+            });
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        toggleForms();
+    });
+</script>
+</body>
+</html>
