@@ -1,0 +1,97 @@
+I have used Mysql database, these commands may generate errors rectify these tables according to your requirements.
+connect with me in linkedin and show my your upgrades that can real made my day/
+CREATE TABLE faculty (
+    facultyId VARCHAR(50) NOT NULL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL DEFAULT 'abc',
+    department VARCHAR(100) NOT NULL DEFAULT 'abc',
+    email VARCHAR(100) NOT NULL DEFAULT 'abc',
+    phone VARCHAR(15) NOT NULL DEFAULT 'abc',
+    address VARCHAR(255) NOT NULL DEFAULT 'abc',
+    city VARCHAR(100) NOT NULL DEFAULT 'abc',
+    state VARCHAR(100) NOT NULL DEFAULT 'abc',
+    zip VARCHAR(20) NOT NULL DEFAULT 'abc',
+    country VARCHAR(100) NOT NULL DEFAULT 'abc',
+    dob DATE NOT NULL DEFAULT '2000-01-01',
+    gender VARCHAR(10) NOT NULL DEFAULT 'abc',
+    qualification VARCHAR(100) NOT NULL DEFAULT 'abc',
+    experience INT NOT NULL DEFAULT 0,
+    specialization VARCHAR(100) NOT NULL DEFAULT 'abc',
+    linkedin VARCHAR(255) DEFAULT 'abc',
+    website VARCHAR(255) DEFAULT 'abc'
+);
+
+CREATE TABLE faculty_user (
+    fid INT PRIMARY KEY,
+    faculty_id INT,
+    faculty_username VARCHAR(255),
+    f_password VARCHAR(255)
+);
+CREATE TABLE forum (
+    post_id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id INT,
+    student_name VARCHAR(50),
+    faculty_id VARCHAR(50),
+    faculty_name VARCHAR(100),
+    message TEXT,
+    posted_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    is_read BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (student_id) REFERENCES students(student_id),
+    FOREIGN KEY (faculty_id) REFERENCES faculty(facultyId)
+);
+
+UPDATE TABLE submissions (
+    submission_id INT PRIMARY KEY AUTO_INCREMENT,
+    assignment_id INT,
+    student_id INT,
+    submission BLOB,
+    feedback TEXT,
+    score INT,
+    FOREIGN KEY (assignment_id) REFERENCES assignments(assignment_id),
+    FOREIGN KEY (student_id) REFERENCES students(student_id)
+);
+
+-- Table for courses
+CREATE TABLE courses (
+    course_id INT PRIMARY KEY,
+    course_code VARCHAR(10) NOT NULL,
+    course_name VARCHAR(50) NOT NULL,
+    instructor_name VARCHAR(50) NOT NULL
+);
+
+
+CREATE TABLE students (
+    student_id INT PRIMARY KEY,
+    student_name VARCHAR(50) NOT NULL
+);
+
+
+CREATE TABLE registrations (
+    registration_id INT PRIMARY KEY AUTO_INCREMENT,
+    student_id INT,
+    course_id INT,
+    FOREIGN KEY (student_id) REFERENCES students(student_id),
+    FOREIGN KEY (course_id) REFERENCES courses(course_id)
+);
+CREATE TABLE assignments (
+    assignment_id INT PRIMARY KEY AUTO_INCREMENT,
+    course_id INT,
+    assignment_title VARCHAR(100),
+    assignment_description TEXT,
+    deadline DATE,
+    FOREIGN KEY (course_id) REFERENCES courses(course_id)
+);
+CREATE TABLE course_videos (
+    video_id INT PRIMARY KEY AUTO_INCREMENT,
+    course_id INT,
+    video_title VARCHAR(100),
+    video_link VARCHAR(255),
+    FOREIGN KEY (course_id) REFERENCES courses(course_id)
+);
+
+Create table users(
+uid int,
+student_id int foriegn key references students;
+varchar username;
+password varchar;
+email varchar;
+)
